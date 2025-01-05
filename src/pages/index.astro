@@ -1,5 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,5 +6,14 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<nav class="flex bg-red-200 px-24 py-4">
+		<h1 class="mr-auto font-bold">Achille Lanutan</h1>
+		<ul class="flex gap-4">
+			<li><a href="tech">Tech</a></li>
+			<li><a href="life">Life</a></li>
+			<li><a href="about">About</a></li>
+			<li><a href="portfolio">Portfolio</a></li>
+		</ul>
+	</nav>
 </Layout>
+
