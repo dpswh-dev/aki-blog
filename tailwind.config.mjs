@@ -7,6 +7,15 @@ export default {
         sans: ["Poppins"],
       },
     },
+    colors: {
+      primary: "#030637",
+      secondary: "#33367A",
+      accent: "#E070BD",
+      darktext: "#480935",
+      subtitle: "#767AB7",
+      display: "#B9BDF5",
+      heading: "#868EFF",
+    },
   },
   plugins: [],
 };
