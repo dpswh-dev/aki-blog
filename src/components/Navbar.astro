@@ -1,10 +1,15 @@
-<nav class="flex bg-secondary px-24 py-6">
+---
+import Hamburger from './Hamburger'
+---
+
+<nav class="flex bg-secondary py-4">
     <h1
         class="mr-auto font-bold text-display tracking-wide font-tilt uppercase"
     >
         achille lanutan
     </h1>
-    <ul class="flex gap-8 text-display">
+    <Hamburger client:load />
+    <!-- <ul class="flex gap-8 text-display">
         <li class="hover:-translate-y-[0.1rem] transition-transform">
             <a href="/tech">Tech</a>
         </li>
@@ -15,5 +20,5 @@
             <a href="/about">About</a>
         </li>
         <li class="text-subtitle"><a href="/portfolio">Portfolio</a></li>
-    </ul>
+    </ul> -->
 </nav>
