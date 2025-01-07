@@ -29,16 +29,16 @@ export default function Hamburger() {
       <button
         onClick={toggleMenu}
         id="hamburger"
-        className="focus:outline-none"
+        className="focus:outline-none mr-5"
       >
         &#9776;
       </button>
       {isOpened && (
         <div
-          className="isolation absolute inset-0 bg-black bg-opacity-25 w-2/3 ml-auto rounded-l-3xl rounded-bl-3xl"
+          className="isolation absolute inset-0 bg-black bg-opacity-50 w-fit ml-auto rounded-l-3xl rounded-bl-3xl"
           ref={navMenuRef}
         >
-          <ul className="flex flex-col gap-16 text-display w-full items-end h-full bg-opacity-20 justify-center text-3xl pr-8">
+          <ul className="flex flex-col gap-16 text-display w-full items-end h-full bg-opacity-20 justify-center text-3xl px-16">
             <li className="hover:-translate-y-[0.1rem] transition-transform">
               <a href="/tech">Tech</a>
             </li>
