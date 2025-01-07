@@ -29,7 +29,7 @@ export default function Hamburger() {
       <button
         onClick={toggleMenu}
         id="hamburger"
-        className="focus:outline-none mr-5"
+        className="focus:outline-none"
       >
         &#9776;
       </button>
