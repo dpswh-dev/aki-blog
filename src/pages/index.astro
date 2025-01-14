@@ -26,38 +26,36 @@ const posts: Post[] = [
 ---
 
 <Layout>
-  <div>
-    <!-- Tech Articles -->
-    <section class="space-y-4">
-      <h1 class="text-white font-tilt text-3xl text-center">TECH ARTICLES</h1>
-      <div class="flex flex-col gap-3">
-        <h2 class="text-display text-xl text-center font-medium">
-          I just deployed my personal blog
-        </h2>
-        <div class="mx-auto bg-secondary w-full h-[320px]"></div>
-      </div>
-      <h2 class="text-white text-xl text-center">Previous articles</h2>
-      {
-        posts.map((post) => (
-          <div>
-            <h2 class="text-display font-medium text-lg">{post.title}</h2>
-            <p class="text-white text-base font-light line-clamp-3">
-              {post.description}
-            </p>
-            <button class="text-subtitle hover:text-accent font-medium py-2">
-              <a href="/">Read more</a>
-            </button>
-          </div>
-        ))
-      }
-    </section>
+  <!-- Tech Articles -->
+  <section class="space-y-4">
+    <h1 class="text-white font-tilt text-3xl text-center">TECH ARTICLES</h1>
+    <div class="flex flex-col gap-3">
+      <h2 class="text-display text-xl text-center font-medium">
+        I just deployed my personal blog
+      </h2>
+      <div class="mx-auto bg-secondary w-full h-[320px]"></div>
+    </div>
+    <h2 class="text-white text-xl text-center">Previous articles</h2>
+    {
+      posts.map((post) => (
+        <div>
+          <h2 class="text-display font-medium text-lg">{post.title}</h2>
+          <p class="text-white text-base font-light line-clamp-3">
+            {post.description}
+          </p>
+          <button class="text-subtitle hover:text-accent font-medium py-2">
+            <a href="/">Read more</a>
+          </button>
+        </div>
+      ))
+    }
+  </section>
 
-    <!-- Life Articles -->
-    <!-- <section>
+  <!-- Life Articles -->
+  <!-- <section>
             <h1 class="text-white font-tilt text-3xl text-center">
                 LIFE ARTICLES
             </h1>
             <h2 class="text-white text-xl text-center">Previous articles</h2>
         </section> -->
-  </div>
 </Layout>

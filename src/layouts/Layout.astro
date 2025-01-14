@@ -24,9 +24,9 @@ import Footer from '../components/Footer.astro'
       rel="stylesheet"
     />
   </head>
-  <body class="bg-primary min-h-screen flex flex-col">
+  <body class="bg-primary min-h-screen flex flex-col overscroll-none">
     <Navbar />
-    <main class="flex flex-1 px-8 py-8">
+    <main class="flex flex-1 px-8 py-8 max-w-[800px] mx-auto">
       <slot />
     </main>
     <Footer />
