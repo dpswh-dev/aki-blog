@@ -11,11 +11,11 @@ import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
-    adapter: cloudflare({
-        platformProxy: {
-            enabled: true,
-        },
-    }),
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
+  }),
 
-    integrations: [react(), mdx(), tailwind()],
+  integrations: [react(), mdx(), tailwind()],
 })
