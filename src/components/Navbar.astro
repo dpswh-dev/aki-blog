@@ -1,5 +1,8 @@
 ---
 import Hamburger from './Hamburger'
+import { cn } from '../utils/utils'
+import Navlink from './Navlink.astro'
+import type React from 'react'
 const navlinks = [
   {
     routePath: '/tech',
@@ -29,10 +32,8 @@ const navlinks = [
   </a>
   <ul class="hidden md:flex gap-16 text-display h-full bg-opacity-20 text-sm">
     {
-      navlinks.map((navlink) => (
-        <li class="hover:-translate-y-[0.1rem] transition-transform">
-          <a href={navlink.routePath}>{navlink.routeName}</a>
-        </li>
+      navlinks.map((navlink): typeof Navlink => (
+        <Navlink routePath={navlink.routePath} routeName={navlink.routeName} />
       ))
     }
   </ul>

@@ -1,0 +1,18 @@
+---
+import { cn } from '../utils/utils'
+
+type NavlinkProps = {
+  routePath: string
+  routeName: string
+}
+
+const { routePath, routeName } = Astro.props as NavlinkProps
+---
+
+<li
+  class={cn('hover:-translate-y-[0.1rem] transition-transform', {
+    'text-subtitle hover:translate-y-0': routePath === '/portfolio',
+  })}
+>
+  <a href={routePath}>{routeName}</a>
+</li>
