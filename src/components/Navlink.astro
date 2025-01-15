@@ -3,8 +3,8 @@ import { cn } from '../utils/utils'
 import type { HTMLAttributes } from 'astro/types'
 
 interface Props extends HTMLAttributes<'li'> {
-  routePath: string
-  routeName: string
+  routePath?: string
+  routeName?: string
 }
 
 const { routePath, routeName, ...attributes } = Astro.props
@@ -12,8 +12,9 @@ const { routePath, routeName, ...attributes } = Astro.props
 
 <li
   {...attributes}
-  class={cn('hover:-translate-y-[0.1rem] transition-transform', {
-    'text-subtitle hover:translate-y-0': routePath === '/portfolio',
+  class={cn('hover:-translate-y-[0.1rem] hover:text-accent transition-all', {
+    'text-subtitle hover:translate-y-0 cursor-default line-through outline-none hover:text-subtitle':
+      routePath === '/portfolio',
   })}
 >
   <a href={routePath}>{routeName}</a>
