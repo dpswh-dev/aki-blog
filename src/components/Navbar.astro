@@ -31,7 +31,7 @@ const navlinks = [
   <ul class="hidden md:flex gap-16 text-display h-full bg-opacity-20 text-sm">
     {
       navlinks.map((navlink): typeof Navlink => (
-        <Navlink routePath={navlink.routePath} routeName={navlink.routeName} />
+        <Navlink routeName={navlink.routeName} routePath={navlink.routePath} />
       ))
     }
   </ul>

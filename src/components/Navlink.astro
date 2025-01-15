@@ -1,15 +1,17 @@
 ---
 import { cn } from '../utils/utils'
+import type { HTMLAttributes } from 'astro/types'
 
-type NavlinkProps = {
+interface Props extends HTMLAttributes<'li'> {
   routePath: string
   routeName: string
 }
 
-const { routePath, routeName } = Astro.props as NavlinkProps
+const { routePath, routeName, ...attributes } = Astro.props
 ---
 
 <li
+  {...attributes}
   class={cn('hover:-translate-y-[0.1rem] transition-transform', {
     'text-subtitle hover:translate-y-0': routePath === '/portfolio',
   })}
