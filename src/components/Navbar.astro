@@ -1,5 +1,23 @@
 ---
 import Hamburger from './Hamburger'
+const navlinks = [
+  {
+    routePath: '/tech',
+    routeName: 'Tech',
+  },
+  {
+    routePath: '/life',
+    routeName: 'Life',
+  },
+  {
+    routePath: '/about',
+    routeName: 'About',
+  },
+  {
+    routePath: '/portfolio',
+    routeName: 'Portfolio',
+  },
+]
 ---
 
 <nav class="flex bg-secondary px-8 py-6">
@@ -9,5 +27,15 @@ import Hamburger from './Hamburger'
   >
     <h1>achille lanutan</h1>
   </a>
+  <ul class="hidden md:flex gap-16 text-display h-full bg-opacity-20 text-sm">
+    {
+      navlinks.map((navlink) => (
+        <li class="hover:-translate-y-[0.1rem] transition-transform">
+          <a href={navlink.routePath}>{navlink.routeName}</a>
+        </li>
+      ))
+    }
+  </ul>
+
   <Hamburger client:load />
 </nav>
