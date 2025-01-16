@@ -3,25 +3,29 @@ import Layout from '../layouts/Layout.astro'
 import Link from '@components/Link.astro'
 
 type Post = {
-  title: string
-  description: string
+  postTitle: string
+  postDescription: string
+  postURL: string
 }
 
 const posts: Post[] = [
   {
-    title: 'I discovered a new way to handle Javascript Promises!',
-    description:
+    postTitle: 'I discovered a new way to handle Javascript Promises!',
+    postDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis dolor eget lobortis fringilla. Pellentesque feugiat nulla iaculis, rhoncus metus in, auctor nibh.',
+    postURL: '/life',
   },
   {
-    title: "Don't use iCloud for Development",
-    description:
+    postTitle: "Don't use iCloud for Development",
+    postDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis dolor eget lobortis fringilla. Pellentesque feugiat nulla iaculis, rhoncus metus in, auctor nibh.',
+    postURL: '/life',
   },
   {
-    title: 'Today I learned Absolute and Relative URL Paths',
-    description:
+    postTitle: 'Today I learned Absolute and Relative URL Paths',
+    postDescription:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis dolor eget lobortis fringilla. Pellentesque feugiat nulla iaculis, rhoncus metus in, auctor nibh.',
+    postURL: '/life',
   },
 ]
 ---
@@ -36,20 +40,28 @@ const posts: Post[] = [
       </h2>
       <div class="mx-auto bg-secondary w-full h-[320px]"></div>
     </div>
-    <h2 class="text-white text-xl text-center">Previous articles</h2>
-    {
-      posts.map((post) => (
-        <div>
-          <h2 class="text-display font-medium text-lg">{post.title}</h2>
-          <p class="text-white text-base font-light line-clamp-3">
-            {post.description}
-          </p>
-          <button class="text-subtitle hover:text-accent font-medium py-2">
-            <a href="/">Read more</a>
-          </button>
-        </div>
-      ))
-    }
-    <Link href="/life" state="default" id="link"> Hello </Link>
+    <!-- SubArticle.tsx -->
+    <div class="flex flex-col gap-4 items-center">
+      <h2 class="text-white text-xl text-center">Previous articles</h2>
+      {
+        posts.map((data) => (
+          <div class="flex flex-col">
+            <h2 class="text-display font-medium text-lg">{data.postTitle}</h2>
+            <p class="text-white text-base font-light line-clamp-3">
+              {data.postDescription}
+            </p>
+            <Link
+              className="mt-2"
+              href={data.postURL}
+              state="default"
+              id="link"
+            >
+              Read more
+            </Link>
+          </div>
+        ))
+      }
+      <Link className="mt-2" href="/" state="active" id="link">View more</Link>
+    </div>
   </section>
 </Layout>
