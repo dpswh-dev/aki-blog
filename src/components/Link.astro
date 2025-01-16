@@ -1,0 +1,29 @@
+---
+import { cn } from '@utils/utils'
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = {
+  type: 'default' | 'navlink'
+  state: 'default' | 'active'
+  className?: string
+} & HTMLAttributes<'a'>
+
+const { state, className, ...attributes } = Astro.props
+---
+
+<a
+  class={cn(
+    'text-base text-subtitle font-medium transition-all',
+    className,
+    {
+      // Input variant styles here
+      'hover:text-display': state === 'default',
+    },
+    {
+      'text-accent': state === 'active',
+    }
+  )}
+  {...attributes}
+>
+  <slot />
+</a>
